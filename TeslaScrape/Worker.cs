@@ -222,9 +222,9 @@ public class Worker : BackgroundService
             }
             else
             {
-                await SendStockFoundNotification(totalMatches, jsonContent, cancellationToken);
-                _lastStockFoundTime = DateTime.Now;
-                _lastStockCount = totalMatches;
+                //await SendStockFoundNotification(totalMatches, jsonContent, cancellationToken);
+                //_lastStockFoundTime = DateTime.Now;
+                //_lastStockCount = totalMatches;
                 // Stok yok - sadece önceden stok varsa bildir
                 if (_lastStockCount > 0)
                 {
