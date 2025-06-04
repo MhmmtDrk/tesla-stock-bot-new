@@ -1,30 +1,22 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using Microsoft.Extensions.Logging;
-using Microsoft.Extensions.Configuration;
-using TeslaScrape;
 using System.Net;
+using TeslaScrape;
 
-var builder = Host.CreateApplicationBuilder(args);
+var builder = Host.CreateDefaultBuilder(args); // CreateApplicationBuilder → CreateDefaultBuilder
 
-// Configuration ekle
-builder.Services.Configure<TeslaWatcherSettings>(
-    builder.Configuration.GetSection("TeslaWatcher"));
-
-// Services ekle
-// HttpClient ile GZIP decompression ekle
-builder.Services.AddHttpClient<Worker>()
-    .ConfigurePrimaryHttpMessageHandler(() => new HttpClientHandler()
-    {
-        AutomaticDecompression = DecompressionMethods.GZip | DecompressionMethods.Deflate | DecompressionMethods.Brotli
-    });
-builder.Services.AddHostedService<Worker>();
-
-// Logging ekle
-builder.Services.AddLogging(config =>
+builder.ConfigureServices(services =>
 {
-    config.AddConsole();
-    config.AddDebug();
+    //services.Configure<TeslaWatcherSettings>(
+    //    builder.Build().Services.GetRequiredService<IConfiguration>().GetSection("TeslaWatcherSettings"));
+
+    services.AddHttpClient<Worker>()
+        .ConfigurePrimaryHttpMessageHandler(() => new HttpClientHandler()
+        {
+            AutomaticDecompression = DecompressionMethods.GZip | DecompressionMethods.Deflate | DecompressionMethods.Brotli
+        });
+
+    services.AddHostedService<Worker>();
 });
 
 var host = builder.Build();
