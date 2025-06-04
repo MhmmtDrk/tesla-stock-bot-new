@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.13.35913.81 d17.13
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TeslaScrape", "TeslaScrape\TeslaScrape.csproj", "{B02ECA27-3FB3-4975-B527-E651B843A380}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B02ECA27-3FB3-4975-B527-E651B843A380}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B02ECA27-3FB3-4975-B527-E651B843A380}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B02ECA27-3FB3-4975-B527-E651B843A380}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B02ECA27-3FB3-4975-B527-E651B843A380}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {113FF1F3-752E-48D3-B3C6-C2FC57EBDEFB}
+	EndGlobalSection
+EndGlobal
